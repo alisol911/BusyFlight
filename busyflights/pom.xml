@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.travix.medusa</groupId>
-	<artifactId>toughjet</artifactId>
+	<artifactId>busyflights</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>ToughJet</name>
+	<name>BusyFlight</name>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -26,6 +26,12 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.travix.medusa</groupId>
+			<artifactId>crazyair-domain</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.travix.medusa</groupId>
 			<artifactId>toughjet-domain</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
@@ -36,6 +42,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-rest-webmvc</artifactId>
+
+		</dependency>
+
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
@@ -43,6 +55,10 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-rest-hal-browser</artifactId>
 		</dependency>
 
 		<dependency>

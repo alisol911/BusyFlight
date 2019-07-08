@@ -10,9 +10,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
 
+import java.net.URI;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -22,11 +26,8 @@ public class ApplicationTests {
 	@LocalServerPort
 	private int port;
 
-	private URL base;
-
 	@Before
 	public void setUp() throws Exception {
-		this.base = new URL("http://localhost:" + port + "/");
 	}
 
 	@Test
@@ -34,9 +35,16 @@ public class ApplicationTests {
 	}
 
 	@Test
-	public void testCrazyAirService() {
+	public void testService() {
 		RestTemplate restTemplate = new RestTemplate();
-		Flight[] list = restTemplate.getForObject(base.toString() + "flight",  Flight[].class);
+		UriComponentsBuilder builder = UriComponentsBuilder
+				.fromUriString("http://localhost:" + port + "/flight")
+				.queryParam("from", "")
+				.queryParam("to", "")
+				.queryParam("outboundDate", "")
+				.queryParam("inboundDate", "")
+				.queryParam("numberOfAdults", 0);
+		Flight[] list = restTemplate.getForObject(builder.toUriString(),  Flight[].class);
 		Assert.assertEquals("Iran Air", list[0].getCarrier());
 	}
 

@@ -8,8 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>Interview Test</name>
-	<description>This is a project skeleton for the Travix Medusa team interview test</description>
+	<name>CrazyAir</name>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

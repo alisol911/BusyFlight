@@ -3,11 +3,12 @@ package com.travix.medusa.crazyair.controller;
 import com.travix.medusa.crazyair.domain.Flight;
 import com.travix.medusa.crazyair.repository.FlightRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class FlightController {
@@ -17,10 +18,11 @@ public class FlightController {
     FlightRepository repository;
 
     @RequestMapping("flight")
-    List<Flight> getFlight(@Param("origin") String origin,
-                           @Param("destination") String destination,
-                           @Param("departureDate") String departureDate,
-                           @Param("returnDate") String returnDate
+    List<Flight> getFlight(@RequestParam("origin") String origin,
+                           @RequestParam("destination") String destination,
+                           @RequestParam("departureDate") String departureDate,
+                           @RequestParam("returnDate") String returnDate,
+                           @RequestParam("passengerCount") int passengerCount
     ){
         return repository.findAll();
     }

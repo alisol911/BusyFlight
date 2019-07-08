@@ -10,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URL;
 
@@ -33,9 +34,16 @@ public class ApplicationTests {
 	}
 
 	@Test
-	public void testCrazyAirService() {
+	public void testService() {
 		RestTemplate restTemplate = new RestTemplate();
-		Flight[] list = restTemplate.getForObject(base.toString() + "flight",  Flight[].class);
+		UriComponentsBuilder builder = UriComponentsBuilder
+				.fromUriString("http://localhost:" + port + "/flight")
+				.queryParam("origin", "")
+				.queryParam("destination", "")
+				.queryParam("departureDate", "")
+				.queryParam("returnDate", "")
+				.queryParam("passengerCount", 0);
+		Flight[] list = restTemplate.getForObject(builder.toUriString(),  Flight[].class);
 		Assert.assertEquals("Iran Air", list[0].getAirline());
 	}
 
