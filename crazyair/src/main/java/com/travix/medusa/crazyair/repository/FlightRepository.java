@@ -1,4 +1,4 @@
-package com.travix.medusa.busyflights.repository;
+package com.travix.medusa.crazyair.repository;
 
 import com.travix.medusa.crazyair.domain.Flight;
 import org.springframework.context.annotation.Lazy;

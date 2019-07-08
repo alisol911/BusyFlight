@@ -1,4 +1,4 @@
-package com.travix.medusa.busyflights;
+package com.travix.medusa.crazyair;
 
 import com.travix.medusa.crazyair.domain.Flight;
 import org.junit.Assert;
@@ -12,7 +12,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
 
 import java.net.URL;
-import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)

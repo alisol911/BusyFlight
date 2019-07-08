@@ -1,7 +1,7 @@
-package com.travix.medusa.busyflights.controller;
+package com.travix.medusa.crazyair.controller;
 
 import com.travix.medusa.crazyair.domain.Flight;
-import com.travix.medusa.busyflights.repository.FlightRepository;
+import com.travix.medusa.crazyair.repository.FlightRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.RequestMapping;
