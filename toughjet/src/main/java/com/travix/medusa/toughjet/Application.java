@@ -23,12 +23,12 @@ public class Application {
 					"AED", "CEA",
 					new GregorianCalendar(2019, Calendar.JULY,4, 10, 0).getTime(),
 					new GregorianCalendar(2019,Calendar.JULY,5, 11, 0).getTime()));
+			customerRepository.save(new Flight("Mahan", 120, 0, 10,
+					"AED", "CEA",
+					new GregorianCalendar(2019, Calendar.JULY,4, 10, 0).getTime(),
+					new GregorianCalendar(2019,Calendar.JULY,5, 11, 0).getTime()));
 			customerRepository.save(new Flight("Iran Air", 100, 0, 10,
-					"AED", "GRA",
-					new GregorianCalendar(2019,Calendar.JULY,5, 14, 30).getTime(),
-					new GregorianCalendar(2019,Calendar.JULY,6, 15, 0).getTime()));
-			customerRepository.save(new Flight("Iran Air", 100, 0, 10,
-					"GGA", "CEA",
+					"GGA", "CBB",
 					new GregorianCalendar(2019,Calendar.JULY,6, 1, 0).getTime(),
 					new GregorianCalendar(2019,Calendar.JULY,7, 1, 0).getTime()));
 			customerRepository.save(new Flight("Mahan", 110, 0, 0,
@@ -37,8 +37,8 @@ public class Application {
 					new GregorianCalendar(2019,Calendar.JULY,5, 1, 0).getTime()));
 			customerRepository.save(new Flight("Saha", 130, 0, 0,
 					"AED", "CEA",
-					new GregorianCalendar(2019,Calendar.JULY,4, 1, 0).getTime(),
-					new GregorianCalendar(2019,Calendar.JULY,5, 1, 0).getTime()));
+					new GregorianCalendar(2019,Calendar.JULY,4, 3, 0).getTime(),
+					new GregorianCalendar(2019,Calendar.JULY,5, 5, 0).getTime()));
 		};
 	}
 

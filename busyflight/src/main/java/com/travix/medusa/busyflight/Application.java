@@ -1,12 +1,12 @@
-package com.travix.medusa.busyflights;
+package com.travix.medusa.busyflight;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BusyFlightsApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BusyFlightsApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 }

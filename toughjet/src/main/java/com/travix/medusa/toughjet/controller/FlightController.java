@@ -4,9 +4,12 @@ import com.travix.medusa.toughjet.domain.Flight;
 import com.travix.medusa.toughjet.repository.FlightRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -33,7 +36,7 @@ public class FlightController {
         try {
             return repository.find(from, to, format.parse(outboundDate), format.parse(inboundDate));
         } catch (ParseException e) {
-            throw new RuntimeException("invalid date format");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "invalid date format");
         }
     }
 }

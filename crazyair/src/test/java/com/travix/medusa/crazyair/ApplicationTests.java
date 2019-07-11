@@ -30,17 +30,13 @@ public class ApplicationTests {
 	}
 
 	@Test
-	public void contextLoads() {
-	}
-
-	@Test
 	public void testService1() {
 		RestTemplate restTemplate = new RestTemplate();
 		UriComponentsBuilder builder = UriComponentsBuilder
 				.fromUriString("http://localhost:" + port + "/flight")
 				.queryParam("origin", "AED");
 		Flight[] list = restTemplate.getForObject(builder.toUriString(),  Flight[].class);
-		Assert.assertEquals(2, list.length);
+		Assert.assertEquals(3, list.length);
 		Assert.assertEquals("Iran Air", list[0].getAirline());
 	}
 
@@ -50,9 +46,9 @@ public class ApplicationTests {
 		UriComponentsBuilder builder = UriComponentsBuilder
 				.fromUriString("http://localhost:" + port + "/flight")
 				.queryParam("origin", "AED")
-				.queryParam("destination", "GRA");
+				.queryParam("destination", "CEA");
 		Flight[] list = restTemplate.getForObject(builder.toUriString(),  Flight[].class);
-		Assert.assertEquals(1, list.length);
+		Assert.assertEquals(2, list.length);
 		Assert.assertEquals("Iran Air", list[0].getAirline());
 	}
 

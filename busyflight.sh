@@ -9,8 +9,6 @@ case $1 in
         if [ ! -f run/busyflight_pid ]; then
             mkdir -p run
 
-            mvn clean install
-
             cd crazyair
             mvn clean package spring-boot:run -Dmaven.test.skip=true &
             echo $! > ../run/crazyair_pid

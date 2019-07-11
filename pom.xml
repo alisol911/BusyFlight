@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.travix.medusa</groupId>
-	<artifactId>busyflights-parent</artifactId>
+	<artifactId>busyflight-parent</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
@@ -22,7 +22,7 @@
         <module>toughjet-domain</module>
         <module>crazyair</module>
         <module>toughjet</module>
-        <module>busyflights</module>
+        <module>busyflight</module>
     </modules>
 
 </project>

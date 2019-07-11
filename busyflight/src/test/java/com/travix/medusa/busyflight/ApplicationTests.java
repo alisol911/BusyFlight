@@ -1,6 +1,6 @@
-package com.travix.medusa.busyflights;
+package com.travix.medusa.busyflight;
 
-import com.travix.medusa.busyflights.domain.Flight;
+import com.travix.medusa.busyflight.domain.Flight;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,7 +15,7 @@ import java.net.URL;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class BusyFlightsApplicationTests {
+public class ApplicationTests {
 
 	@LocalServerPort
 	private int port;
@@ -30,7 +30,7 @@ public class BusyFlightsApplicationTests {
 		UriComponentsBuilder builder = UriComponentsBuilder
 				.fromUriString("http://localhost:" + port + "/flight");
 		Flight[] list = restTemplate.getForObject(builder.toUriString(),  Flight[].class);
-		Assert.assertEquals("Iran Air", list[0].getAirline());
+		Assert.assertEquals(0, list.length);
 
 	}
 

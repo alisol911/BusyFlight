@@ -22,16 +22,16 @@ public class Application {
 					"AED", "CEA",
 					new GregorianCalendar(2019, Calendar.JULY,4, 10, 0).getTime(),
 					new GregorianCalendar(2019,Calendar.JULY,5, 11, 0).getTime()));
-			customerRepository.save(new Flight("Iran Air", 100, "",
-					"AED", "GRA",
-					new GregorianCalendar(2019,Calendar.JULY,5, 12, 0).getTime(),
-					new GregorianCalendar(2019,Calendar.JULY,6, 1, 0).getTime()));
+			customerRepository.save(new Flight("Saha", 90, "",
+					"AED", "CEA",
+					new GregorianCalendar(2019, Calendar.JULY,4, 10, 0).getTime(),
+					new GregorianCalendar(2019,Calendar.JULY,5, 11, 0).getTime()));
 			customerRepository.save(new Flight("Iran Air", 100, "",
 					"GGA", "CEA",
 					new GregorianCalendar(2019,Calendar.JULY,6, 15, 0).getTime(),
 					new GregorianCalendar(2019,Calendar.JULY,7, 12, 0).getTime()));
 			customerRepository.save(new Flight("Mahan", 110, "",
-					"FFA", "CEA",
+					"AED", "BBA",
 					new GregorianCalendar(2019,Calendar.JULY,4, 19, 0).getTime(),
 					new GregorianCalendar(2019,Calendar.JULY,5, 4, 0).getTime()));
 			customerRepository.save(new Flight("Saha", 130, "",

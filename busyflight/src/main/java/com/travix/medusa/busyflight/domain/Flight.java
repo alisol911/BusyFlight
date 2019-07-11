@@ -1,8 +1,9 @@
-package com.travix.medusa.busyflights.domain;
+package com.travix.medusa.busyflight.domain;
 
 import java.util.Date;
 
 public class Flight {
+    private  String supplier;
     private String airline;
     private double price;
     private String departureAirportCode;
@@ -10,9 +11,10 @@ public class Flight {
     private Date departureDate;
     private Date arrivalDate;
 
-    public Flight(String airline, double price,
+    public Flight(String supplier, String airline, double price,
                   String departureAirportCode, String destinationAirportCode,
                   Date departureDate, Date arrivalDate) {
+        this.supplier = supplier;
         this.airline = airline;
         this.price = price;
         this.departureAirportCode = departureAirportCode;
@@ -24,6 +26,15 @@ public class Flight {
     public Flight(){
 
     }
+
+    public String getSupplier() {
+        return supplier;
+    }
+
+    public void setSupplier(final String supplier) {
+        this.supplier = supplier;
+    }
+
     public String getAirline() {
         return airline;
     }
