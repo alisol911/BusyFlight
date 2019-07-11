@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 @SpringBootApplication
@@ -18,20 +19,25 @@ public class Application {
 	CommandLineRunner init(FlightRepository customerRepository) {
 		return (evt) ->  {
 			customerRepository.save(new Flight("Iran Air", 100, "",
-					"AED", "CEA", new GregorianCalendar(2019,6,4).getTime(),
-					new GregorianCalendar(2019,6,5).getTime()));
+					"AED", "CEA",
+					new GregorianCalendar(2019, Calendar.JULY,4, 10, 0).getTime(),
+					new GregorianCalendar(2019,Calendar.JULY,5, 11, 0).getTime()));
 			customerRepository.save(new Flight("Iran Air", 100, "",
-					"AED", "GRA", new GregorianCalendar(2019,6,5).getTime(),
-					new GregorianCalendar(2019,6,6).getTime()));
+					"AED", "GRA",
+					new GregorianCalendar(2019,Calendar.JULY,5, 12, 0).getTime(),
+					new GregorianCalendar(2019,Calendar.JULY,6, 1, 0).getTime()));
 			customerRepository.save(new Flight("Iran Air", 100, "",
-					"GGA", "CEA", new GregorianCalendar(2019,6,6).getTime(),
-					new GregorianCalendar(2019,6,7).getTime()));
+					"GGA", "CEA",
+					new GregorianCalendar(2019,Calendar.JULY,6, 15, 0).getTime(),
+					new GregorianCalendar(2019,Calendar.JULY,7, 12, 0).getTime()));
 			customerRepository.save(new Flight("Mahan", 110, "",
-					"AED", "CEA", new GregorianCalendar(2019,6,4).getTime(),
-					new GregorianCalendar(2019,6,5).getTime()));
+					"FFA", "CEA",
+					new GregorianCalendar(2019,Calendar.JULY,4, 19, 0).getTime(),
+					new GregorianCalendar(2019,Calendar.JULY,5, 4, 0).getTime()));
 			customerRepository.save(new Flight("Saha", 130, "",
-					"AED", "CEA", new GregorianCalendar(2019,6,4).getTime(),
-					new GregorianCalendar(2019,6,5).getTime()));
+					"DDC", "CEA",
+					new GregorianCalendar(2019,Calendar.JULY,4, 11, 0).getTime(),
+					new GregorianCalendar(2019,Calendar.JULY,5, 11, 0).getTime()));
 		};
 	}
 

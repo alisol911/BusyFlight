@@ -34,16 +34,25 @@ public class ApplicationTests {
 	}
 
 	@Test
-	public void testService() {
+	public void testService1() {
 		RestTemplate restTemplate = new RestTemplate();
 		UriComponentsBuilder builder = UriComponentsBuilder
 				.fromUriString("http://localhost:" + port + "/flight")
-				.queryParam("origin", "")
-				.queryParam("destination", "")
-				.queryParam("departureDate", "")
-				.queryParam("returnDate", "")
-				.queryParam("passengerCount", 0);
+				.queryParam("origin", "AED");
 		Flight[] list = restTemplate.getForObject(builder.toUriString(),  Flight[].class);
+		Assert.assertEquals(2, list.length);
+		Assert.assertEquals("Iran Air", list[0].getAirline());
+	}
+
+	@Test
+	public void testService2() {
+		RestTemplate restTemplate = new RestTemplate();
+		UriComponentsBuilder builder = UriComponentsBuilder
+				.fromUriString("http://localhost:" + port + "/flight")
+				.queryParam("origin", "AED")
+				.queryParam("destination", "GRA");
+		Flight[] list = restTemplate.getForObject(builder.toUriString(),  Flight[].class);
+		Assert.assertEquals(1, list.length);
 		Assert.assertEquals("Iran Air", list[0].getAirline());
 	}
 
