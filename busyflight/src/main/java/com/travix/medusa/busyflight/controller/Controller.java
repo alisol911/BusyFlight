@@ -50,8 +50,8 @@ public class Controller {
             .onErrorReturn(new com.travix.medusa.toughjet.domain.Flight());
         return Flux.merge(
                 crazyair.filter(ca -> ca.getAirline() != null).map(ca -> new Flight(
-                                "CrazyAir",
                                 ca.getAirline(),
+                        "CrazyAir",
                                 ca.getPrice(),
                                 ca.getDepartureAirportCode(),
                                 ca.getDestinationAirportCode(),
@@ -60,8 +60,8 @@ public class Controller {
                         )
                 ),
                 toughjet.filter(tj -> tj.getCarrier() != null).map(tj -> new Flight(
-                        "ToughJet",
                         tj.getCarrier(),
+                        "ToughJet",
                         tj.getBasePrice() + tj.getTax() - tj.getDiscount(),
                         tj.getDepartureAirportName(),
                         tj.getArrivalAirportName(),
@@ -69,6 +69,6 @@ public class Controller {
                         tj.getInboundDateTime()
                 ))
 
-        ).sort(Comparator.comparingDouble(Flight::getPrice));
+        ).sort(Comparator.comparingDouble(Flight::getFare));
     }
 }

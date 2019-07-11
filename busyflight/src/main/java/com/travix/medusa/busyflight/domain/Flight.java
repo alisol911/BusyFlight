@@ -3,20 +3,20 @@ package com.travix.medusa.busyflight.domain;
 import java.util.Date;
 
 public class Flight {
-    private  String supplier;
     private String airline;
-    private double price;
+    private  String supplier;
+    private double fare;
     private String departureAirportCode;
     private String destinationAirportCode;
     private Date departureDate;
     private Date arrivalDate;
 
-    public Flight(String supplier, String airline, double price,
+    public Flight(String airline, String supplier, double fare,
                   String departureAirportCode, String destinationAirportCode,
                   Date departureDate, Date arrivalDate) {
-        this.supplier = supplier;
         this.airline = airline;
-        this.price = price;
+        this.supplier = supplier;
+        this.fare = fare;
         this.departureAirportCode = departureAirportCode;
         this.destinationAirportCode = destinationAirportCode;
         this.departureDate = departureDate;
@@ -27,14 +27,6 @@ public class Flight {
 
     }
 
-    public String getSupplier() {
-        return supplier;
-    }
-
-    public void setSupplier(final String supplier) {
-        this.supplier = supplier;
-    }
-
     public String getAirline() {
         return airline;
     }
@@ -43,12 +35,20 @@ public class Flight {
         this.airline = airline;
     }
 
-    public double getPrice() {
-        return price;
+    public String getSupplier() {
+        return supplier;
     }
 
-    public void setPrice(final double price) {
-        this.price = price;
+    public void setSupplier(final String supplier) {
+        this.supplier = supplier;
+    }
+
+    public double getFare() {
+        return fare;
+    }
+
+    public void setFare(final double fare) {
+        this.fare = fare;
     }
 
     public String getDepartureAirportCode() {
