@@ -39,12 +39,12 @@ public class ApplicationTests {
 		RestTemplate restTemplate = new RestTemplate();
 		UriComponentsBuilder builder = UriComponentsBuilder
 				.fromUriString("http://localhost:" + port + "/flight")
-				.queryParam("from", "")
-				.queryParam("to", "")
-				.queryParam("outboundDate", "")
-				.queryParam("inboundDate", "")
-				.queryParam("numberOfAdults", 0);
+				.queryParam("from", "AED")
+				.queryParam("to", "CEA")
+				.queryParam("outboundDate", "2019-07-04-10:00")
+				.queryParam("inboundDate", "2019-07-05-11:00");
 		Flight[] list = restTemplate.getForObject(builder.toUriString(),  Flight[].class);
+		Assert.assertEquals(1, list.length);
 		Assert.assertEquals("Iran Air", list[0].getCarrier());
 	}
 

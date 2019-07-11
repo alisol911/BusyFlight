@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,9 +23,13 @@ public class FlightController {
     List<Flight> getFlight(@RequestParam("from") String from,
                            @RequestParam("to") String to,
                            @RequestParam("outboundDate") String outboundDate,
-                           @RequestParam("inboundDate") String inboundDate,
-                           @RequestParam("numberOfAdults") Optional<Integer> numberOfAdults
+                           @RequestParam("inboundDate") String inboundDate
     ){
-        return repository.findAll();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd-HH:mm");
+        try {
+            return repository.find(from, to, format.parse(outboundDate), format.parse(inboundDate));
+        } catch (ParseException e) {
+            throw new RuntimeException("invalid date format");
+        }
     }
 }
